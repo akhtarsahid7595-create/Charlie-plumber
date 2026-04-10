@@ -483,29 +483,44 @@ ul {
     gap: 20px;
 }
 
+.why-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
 .why-card {
     text-align: center;
-    background: var(--glass);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px 30px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
 }
 
 .why-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 229, 255, 0.2);
 }
 
-.why-img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 15px var(--accent);
+.why-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+    color: var(--white);
+}
+
+.why-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 /* CTA Box */
