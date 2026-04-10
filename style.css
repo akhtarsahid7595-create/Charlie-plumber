@@ -291,8 +291,8 @@ ul {
 /* Floating UI Cards */
 .ui-card {
     position: absolute;
-    background: rgba(21, 28, 36, 0.8);
-    backdrop-filter: blur(20px);
+    background: rgba(21, 28, 36, 0.85); /* Slightly more opaque for clarity */
+    backdrop-filter: blur(12px); /* Standard blur for desktop */
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 16px 24px;
     border-radius: 20px;
@@ -710,10 +710,11 @@ ul {
 }
 
 @media (max-width: 992px) {
+    .container { padding: 0 15px; }
     .hero .container {
         flex-direction: column;
         text-align: center;
-        gap: 60px;
+        gap: 40px;
     }
     
     .hero-content {
@@ -739,17 +740,47 @@ ul {
 @media (max-width: 768px) {
     .nav-links, .header-cta { display: none; }
     .hero { padding-top: 80px; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.1rem; }
+    .hero h1 { font-size: 2.25rem; line-height: 1.2; }
+    .hero p { font-size: 1rem; margin-bottom: 32px; }
     .section-padding { padding: 60px 0; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .hero-btns { width: 100%; flex-direction: column; }
+    .hero-btns { width: 100%; flex-direction: column; gap: 15px; }
     .hero-btns .btn { width: 100%; }
-    .trust-row { flex-direction: column; gap: 15px; align-items: center; }
+    .trust-row { flex-direction: column; gap: 15px; align-items: center; padding-top: 24px; }
     .cta-box { padding: 40px 20px; }
-    .cta-box h2 { font-size: 2rem; }
+    .cta-box h2 { font-size: 1.75rem; }
     .services-grid { grid-template-columns: 1fr; }
     
-    .ui-card { padding: 10px 16px; font-size: 0.8rem; }
-    .ui-card .icon { width: 30px; height: 30px; }
+    /* Optimized UI Cards for small screens */
+    .ui-card { 
+        position: relative; 
+        top: auto !important; 
+        left: auto !important; 
+        right: auto !important; 
+        bottom: auto !important;
+        margin: 10px auto;
+        padding: 12px 16px; 
+        font-size: 0.8rem; 
+        width: fit-content;
+        backdrop-filter: blur(6px); /* Reduced blur for mobile clarity */
+        animation: none; /* Subtler feel */
+        transform: none !important;
+    }
+    .ui-card .icon { width: 30px; height: 30px; min-width: 30px; }
+    
+    .hero-visual {
+        margin-top: 40px;
+        order: 2;
+    }
+    
+    .main-visual-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .hero-main-img {
+        border-radius: 24px;
+        margin-bottom: 20px;
+    }
 }
